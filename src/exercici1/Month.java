@@ -1,3 +1,4 @@
+package exercici1;
 
 public class Month {
 
@@ -9,5 +10,9 @@ public class Month {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
