@@ -2,6 +2,7 @@ package exercici1;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Main {
@@ -38,6 +39,11 @@ public class Main {
             System.out.println(month.getName());
         }
 
+        Iterator<Month> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            Month month = iterator.next();
+            System.out.println(month.getName());
+        }
 
     }
 }
