@@ -21,24 +21,25 @@ public class Main {
         Months.add(new Month("October"));
         Months.add(new Month("November"));
         Months.add(new Month("December"));
-        Months.add(new Month("December"));
 
-        /*for (Month month : Months) {
+        System.out.println("Primer arraylist sin Agosto");
+        for (Month month : Months) {
             System.out.println(month.getName());
-        }*/
+        }
 
         Months.add(7,new Month("August"));
-
-        /*for (Month month : Months) {
+        System.out.println("Despues de agregar August en la posicion que corresponde");
+        for (Month month : Months) {
             System.out.println(month.getName());
-        }*/
+        }
 
         Set<Month> set = new HashSet<>(Months);
-
+        System.out.println("Recorriendo la lista con un for");
         for (Month month : set) {
             System.out.println(month.getName());
         }
 
+        System.out.println("Recorriendo la lista usando el iterador");
         Iterator<Month> iterator = set.iterator();
         while (iterator.hasNext()) {
             Month month = iterator.next();
