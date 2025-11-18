@@ -12,11 +12,12 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader("countries.txt"));
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                String[] split = line.split(" ");
+                countries.put(split[0],split[1]);
             }
 
         }  catch (IOException e) {
-            System.out.println(e);
+            System.out.println("IOException");
         }
 
 
