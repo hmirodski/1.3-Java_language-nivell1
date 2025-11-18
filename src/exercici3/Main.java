@@ -1,8 +1,7 @@
 package exercici3;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,16 +22,27 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username: ");
-        String input = scanner.nextLine();
+        String username = scanner.nextLine();
 
-        int counter = 1;
-        while( counter <= 10 ) {
 
-            counter++;
+        List<String> keys = new ArrayList<>(countries.keySet());
+        Random random = new Random();
+        int points = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            String randomCountry= keys.get(random.nextInt(keys.size()));
+            String capital = countries.get(randomCountry);
+            System.out.println("What's the capital of " + randomCountry);
+            String input = scanner.nextLine();
+            if(input.equals(capital)) {
+                System.out.println("Capital is " + capital);
+                points++;
+            } else {
+                System.out.println("Incorrect: The capital is " + capital);
+            }
+
         }
-
-
-
+        System.out.println("Congrats " + username +  " you have " + points + " points");
 
 
     }
