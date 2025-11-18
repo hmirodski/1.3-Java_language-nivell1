@@ -44,6 +44,16 @@ public class Main {
         }
         System.out.println("Congrats " + username +  " you have " + points + " points");
 
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("clasificacio.txt", true));
+            bw.write(username + ": " + points + " points");
+            bw.newLine();
+            bw.close();
+            System.out.println("clasificacio.txt saved successfully");
+        } catch (IOException e) {
+            System.out.println("classificacio.txt not saved");
+        }
+
 
     }
 }
