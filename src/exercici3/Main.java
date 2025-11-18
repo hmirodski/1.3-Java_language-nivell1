@@ -9,10 +9,11 @@ public class Main {
         HashMap<String,String> countries = new HashMap<>();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("countries.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("countries.txt"));
             String line;
-            line = reader.readLine();
-            
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
 
         }  catch (IOException e) {
             System.out.println(e);
