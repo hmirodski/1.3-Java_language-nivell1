@@ -35,7 +35,7 @@ public class Main {
             String capital = countries.get(randomCountry);
             System.out.println("What's the capital of " + randomCountry);
             String input = scanner.nextLine();
-            if(input.equals(capital)) {
+            if(input.equalsIgnoreCase(capital)) {
                 System.out.println("Capital is " + capital);
                 points++;
             } else {
