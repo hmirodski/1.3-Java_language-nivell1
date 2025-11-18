@@ -3,6 +3,7 @@ package exercici2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -17,6 +18,12 @@ public class Main {
         System.out.println(lista);
 
         List<Integer> segonaLista = new ArrayList<>();
-        
+
+        ListIterator<Integer> iterator = lista.listIterator(lista.size());
+        while (iterator.hasPrevious()) {
+            segonaLista.add(iterator.previous());
+        }
+
+        System.out.println(segonaLista);
     }
 }
