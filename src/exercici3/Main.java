@@ -2,6 +2,7 @@ package exercici3;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +20,20 @@ public class Main {
         }  catch (IOException e) {
             System.out.println("IOException");
         }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter username: ");
+        String input = scanner.nextLine();
+
+        int counter = 1;
+        while( counter <= 10 ) {
+
+            
+            counter++;
+        }
+
+
+
 
 
     }
