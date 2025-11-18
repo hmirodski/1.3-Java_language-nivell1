@@ -14,6 +14,7 @@ public class Main {
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(" ");
                 countries.put(split[0],split[1]);
+                br.close();
             }
 
         }  catch (IOException e) {
@@ -50,6 +51,7 @@ public class Main {
             bw.newLine();
             bw.close();
             System.out.println("clasificacio.txt saved successfully");
+            scanner.close();
         } catch (IOException e) {
             System.out.println("classificacio.txt not saved");
         }
