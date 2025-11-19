@@ -13,11 +13,11 @@ public class SaveFile {
             bw.write(username + "scored: " + points + " points");
             bw.newLine();
             bw.close();
-            System.out.println("clasificacio.txt saved successfully");
+
             return true;
 
         } catch (IOException e) {
-            System.out.println("classificacio.txt not saved");
+
             return false;
         }
 

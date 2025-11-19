@@ -1,9 +1,6 @@
 package exercici3;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class CountryQuiz {
 
@@ -39,4 +36,20 @@ public class CountryQuiz {
         return correct;
 
     }
+
+    public void playRound(Scanner scanner) {
+        for (int i = 1; i <= 10; i++) {
+            String country = getRandomCountry();
+
+            System.out.print("What's the capital of " + country + "? ");
+            String capital = scanner.nextLine();
+
+            if(correctAnswer(country,capital)){
+                System.out.println("Correct!, the capital of "+ country + " is " + capital);
+            } else {
+                System.out.println("Wrong!, the capital of "+ country + " is " + getCapital(country));
+            }
+        }
+    }
+
 }

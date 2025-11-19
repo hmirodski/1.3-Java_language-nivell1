@@ -20,30 +20,16 @@ public class Main {
 
 
         CountryQuiz game = new CountryQuiz(countryList);
-        
-        for (int i = 1; i <= 10; i++) {
-            String country = game.getRandomCountry();
-
-            System.out.print("What's the capital of " + country + "? ");
-            String capital = scanner.nextLine();
-
-            if(game.correctAnswer(country,capital)){
-                System.out.println("Correct!, the capital of "+ country + " is " + capital);
-            } else {
-                System.out.println("Wrong!, the capital of "+ country + " is " + game.getCapital(country));
-            }
-        }
+        game.playRound(scanner);
         System.out.println(username + " You scored " + game.getPoints() + "/10 points");
 
 
         SaveFile saver = new SaveFile();
         if (saver.save("clasificacio.txt", username, game.getPoints())) {
-            System.out.println("Score saved successfully");
+            System.out.println("clasificacio.txt saved successfully");
         } else {
-            System.out.println(" Error saving score");
+            System.out.println("classificacio.txt not saved");
         }
-
-
 
 
     }
