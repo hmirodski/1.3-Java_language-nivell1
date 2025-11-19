@@ -5,22 +5,15 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        String filepath = "countries.txt";
 
-        // Load countries to hashmap
-        HashMap<String,String> countries = new HashMap<>();
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("countries.txt"));
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] split = line.split(" ");
-                countries.put(split[0],split[1]);
+        Countries countries = new Countries();
+        Map<String,String> countryList = countries.loadCountries(filepath);
+        System.out.println("this is countryList:  " + countryList);
 
-            }
-            br.close();
-        }  catch (IOException e) {
-            System.out.println("IOException");
-        }
+
+/*
 
 
         Scanner scanner = new Scanner(System.in);
@@ -58,6 +51,7 @@ public class Main {
             System.out.println("classificacio.txt not saved");
         }
 
+*/
 
     }
 }
