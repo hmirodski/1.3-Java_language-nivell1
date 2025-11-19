@@ -29,17 +29,14 @@ public class CountryQuiz {
         return points;
     }
 
-        for(int i = 1; i <= 10; i++) {
+    public boolean correctAnswer(String country, String answer) {
+        String correctCapital = getCapital(country);
+        boolean correct = correctCapital.equals(answer);
 
-        
-        System.out.println("What's the capital of " + randomCountry);
-        String input = scanner.nextLine();
-        if(input.equalsIgnoreCase(capital)) {
-            System.out.println("Capital is " + capital);
+        if(correct) {
             points++;
-        } else {
-            System.out.println("Incorrect: The capital is " + capital);
         }
-
+        return correct;
+        
     }
 }
