@@ -21,8 +21,22 @@ public class Main {
         String username = scanner.nextLine();
 
 
-        
-        System.out.println("Congrats " + username +  " you have " + points + " points");
+        CountryQuiz game = new CountryQuiz(countryList);
+        for (int i = 1; i <= 10; i++) {
+            String country = game.getRandomCountry();
+
+            System.out.print("What's the capital of " + country + "? ");
+            String capital = scanner.nextLine();
+
+            if(game.correctAnswer(country,capital)){
+                System.out.println("Correct!, the capital of "+ country + "is " + capital);
+            } else {
+                System.out.println("Wrong!, the capital of "+ country + "is " + capital);
+            }
+        }
+
+
+            System.out.println("Congrats " + username +  " you have " + points + " points");
 
 
 
