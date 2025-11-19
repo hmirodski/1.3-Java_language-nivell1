@@ -9,7 +9,6 @@ public class SaveFile {
     public boolean save(String filename, String username, int points){
 
         try {
-
             BufferedWriter bw = new BufferedWriter(new FileWriter(filename, true));
             bw.write(username + "scored: " + points + " points");
             bw.newLine();

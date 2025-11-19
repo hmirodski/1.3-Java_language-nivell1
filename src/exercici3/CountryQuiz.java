@@ -2,19 +2,36 @@ package exercici3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class CountryQuiz {
 
+    private Map<String, String> countries;
+    private List<String> keys;
+    private Random random = new Random();
+    private int points = 0;
 
+    public CountryQuiz(Map<String, String> countries) {
+        this.countries = countries;
+        this.keys = new ArrayList<>(countries.keySet());
+    }
 
-    List<String> keys = new ArrayList<>(countryList.keySet());
-    Random random = new Random();
-    int points = 0;
+    public String getRandomCountry() {
+        return keys.get(random.nextInt(keys.size()));
+    }
 
-        for (int i = 1; i <= 10; i++) {
-        String randomCountry= keys.get(random.nextInt(keys.size()));
-        String capital = countryList.get(randomCountry);
+    public String getCapital(String country) {
+        return countries.get(country);
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+        for(int i = 1; i <= 10; i++) {
+
+        
         System.out.println("What's the capital of " + randomCountry);
         String input = scanner.nextLine();
         if(input.equalsIgnoreCase(capital)) {
