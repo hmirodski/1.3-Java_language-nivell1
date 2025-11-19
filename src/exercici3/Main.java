@@ -21,6 +21,7 @@ public class Main {
         String username = scanner.nextLine();
 
 
+        
         System.out.println("Congrats " + username +  " you have " + points + " points");
 
 

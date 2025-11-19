@@ -31,12 +31,12 @@ public class CountryQuiz {
 
     public boolean correctAnswer(String country, String answer) {
         String correctCapital = getCapital(country);
-        boolean correct = correctCapital.equals(answer);
+        boolean correct = correctCapital.equalsIgnoreCase(answer);
 
         if(correct) {
             points++;
         }
         return correct;
-        
+
     }
 }
