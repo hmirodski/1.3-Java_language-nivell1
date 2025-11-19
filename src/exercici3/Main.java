@@ -11,8 +11,6 @@ public class Main {
 
         CountriesList countries = new CountriesList();
         Map<String,String> countryList = countries.loadCountries(filePath);
-        System.out.println("this is countryList:  " + countryList);
-        System.out.println("Countries loaded: " + countryList.size());
 
 
 
@@ -22,6 +20,7 @@ public class Main {
 
 
         CountryQuiz game = new CountryQuiz(countryList);
+        
         for (int i = 1; i <= 10; i++) {
             String country = game.getRandomCountry();
 
@@ -29,14 +28,20 @@ public class Main {
             String capital = scanner.nextLine();
 
             if(game.correctAnswer(country,capital)){
-                System.out.println("Correct!, the capital of "+ country + "is " + capital);
+                System.out.println("Correct!, the capital of "+ country + " is " + capital);
             } else {
-                System.out.println("Wrong!, the capital of "+ country + "is " + capital);
+                System.out.println("Wrong!, the capital of "+ country + " is " + game.getCapital(country));
             }
         }
+        System.out.println(username + " You scored " + game.getPoints() + "/10 points");
 
 
-            System.out.println("Congrats " + username +  " you have " + points + " points");
+        SaveFile saver = new SaveFile();
+        if (saver.save("clasificacio.txt", username, game.getPoints())) {
+            System.out.println("Score saved successfully");
+        } else {
+            System.out.println(" Error saving score");
+        }
 
 
 
