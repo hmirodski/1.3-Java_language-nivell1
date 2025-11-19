@@ -6,17 +6,22 @@ import java.io.IOException;
 
 public class SaveFile {
 
-    public void save(String filename, String username, int Points){
+    public boolean save(String filename, String username, int points){
 
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("clasificacio.txt", true));
-            bw.write(username + ": " + points + " points");
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filename, true));
+            bw.write(username + "scored: " + points + " points");
             bw.newLine();
             bw.close();
             System.out.println("clasificacio.txt saved successfully");
-            scanner.close();
+            return true;
+
         } catch (IOException e) {
             System.out.println("classificacio.txt not saved");
+            return false;
         }
+
     }
+
 }
