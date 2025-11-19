@@ -6,6 +6,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+        // Load countries to hashmap
         HashMap<String,String> countries = new HashMap<>();
 
         try {
@@ -14,12 +15,13 @@ public class Main {
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(" ");
                 countries.put(split[0],split[1]);
-                br.close();
-            }
 
+            }
+            br.close();
         }  catch (IOException e) {
             System.out.println("IOException");
         }
+
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username: ");
