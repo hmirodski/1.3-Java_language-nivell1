@@ -24,6 +24,6 @@ public class Countries {
             System.out.println("Error loading countries: " + e.getMessage());
         }
         return countries;
-    };
+    }
 
 }

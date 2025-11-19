@@ -5,13 +5,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String filepath = "countries.txt";
+        String filePath = "countries.txt";
 
 
         Countries countries = new Countries();
-        Map<String,String> countryList = countries.loadCountries(filepath);
+        Map<String,String> countryList = countries.loadCountries(filePath);
         System.out.println("this is countryList:  " + countryList);
-
+        System.out.println("Countries loaded: " + countryList.size());
 
 /*
 
@@ -40,16 +40,7 @@ public class Main {
         }
         System.out.println("Congrats " + username +  " you have " + points + " points");
 
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("clasificacio.txt", true));
-            bw.write(username + ": " + points + " points");
-            bw.newLine();
-            bw.close();
-            System.out.println("clasificacio.txt saved successfully");
-            scanner.close();
-        } catch (IOException e) {
-            System.out.println("classificacio.txt not saved");
-        }
+
 
 */
 
