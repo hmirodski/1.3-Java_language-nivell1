@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Countries {
+public class CountriesList {
     public Map<String,String> loadCountries(String filepath) {
 
         Map<String,String> countries = new HashMap<>();
